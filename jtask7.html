@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript task-7</title>
+    <script>
+        function start(){
+            document.getElementById("train").style.animationPlayState = "running";
+        }
+        function stop(){
+            document.getElementById("train").style.animationPlayState="paused";
+        }
+    </script>
+    <style>
+        h1,div{
+            text-align: center;
+        }
+        h1{
+            color: rgb(2, 2, 109);
+        }
+        img{
+            padding-top: 100px;
+            animation: move 4s linear infinite ;
+            animation-play-state: paused;
+        }
+        @keyframes move{
+            0% {padding-left: 0%;}
+            100% {padding-left: 100%;}
+        }
+    </style>
 </head>
 <body>
-    <html>   
-   <head>   
-      <script type = "text/javascript">   
-      
-            var img = null;   
-            function init(){    
-               img = document.getElementById('myimg');  
-               img.style.position = 'relative';       
-               img.style.left = '50px';     
-            }       
-            function moveRight(){    
-               img.style.left = parseInt(  
-               img.style.left) + 100 + 'px';    
-            }    
-            window.onload = init;    
-     
-      </script>   
-   </head>   
-     
-   <body>   
-      <form>   
-         <img id = "myimg" src = "https://ik.imagekit.io/82udzetw1/train.png?updatedAt=1695613115755" />   
-         <center>  
-            <h1 style="color: blue;">Click the following button to handle animation</h1>   
-         <input type = "button" value = "Start" onclick = "moveRight();" />  
-         <input type = "button" value = "stop" onclick = "stop();" />  
-      </center>   
-      </center>   
-      </form>  
-   </body>  
-     
-</html> 
+    <img id="train" src="https://ik.imagekit.io/82udzetw1/train.png?updatedAt=1695613115755"  alt="train" height="200px">
+    <div style="width: 100%;height: 5px;"></div>
+    <h1>Click the following buttons to handle animation</h1>
+    <div>
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+    </div>
+</body>
+</html>
